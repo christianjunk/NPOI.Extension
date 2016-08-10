@@ -26,6 +26,7 @@ namespace NPOI.Extension {
 
             // get the physical rows
             var rows = sheet.GetRowEnumerator();
+            IRow headerRow = null;
 
             // get the writable properties
             var properties = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.SetProperty);
@@ -47,8 +48,12 @@ namespace NPOI.Extension {
             }
 
             var list = new List<T>();
+            int idx = 0;
             while (rows.MoveNext()) {
                 var row = rows.Current as IRow;
+
+                if (idx == 0) headerRow = row;
+                idx++;
 
                 if (row.RowNum < startRow) {
                     continue;
@@ -59,12 +64,35 @@ namespace NPOI.Extension {
                     var prop = properties[i];
 
                     int index = i;
+                    string title = String.Empty;
+                    bool autoIndex = false;
+
                     if (!haventCols) {
                         var column = attributes[i];
                         if (column == null)
                             continue;
                         else
+                        {
                             index = column.Index;
+                            title = column.Title;
+                            autoIndex = column.AutoIndex;
+                        }
+
+                    }
+
+                    if (index < 0 && autoIndex && !String.IsNullOrEmpty(title))
+                    {
+                        // Try to autodiscover index from title
+                        foreach (ICell cell in headerRow.Cells)
+                        {
+                            if (!String.IsNullOrEmpty(cell.StringCellValue))
+                            {
+                                if (cell.StringCellValue.Equals(title))
+                                {
+                                    index = cell.ColumnIndex;
+                                }
+                            }
+                        }
                     }
 
                     var value = row.GetCellValue(index);
