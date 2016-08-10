@@ -1,5 +1,7 @@
 ﻿// Copyright (c) RigoFunc (xuyingting). All rights reserved.
 
+using NPOI.XSSF.UserModel;
+
 namespace NPOI.Extension {
     using System;
     using System.Collections.Generic;
@@ -46,7 +48,7 @@ namespace NPOI.Extension {
 
             var list = new List<T>();
             while (rows.MoveNext()) {
-                var row = rows.Current as HSSFRow;
+                var row = rows.Current as IRow;
 
                 if (row.RowNum < startRow) {
                     continue;
@@ -122,10 +124,23 @@ namespace NPOI.Extension {
             return null;
         }
 
-        private static HSSFWorkbook InitializeWorkbook(string excelFile) {
-            using (var file = new FileStream(excelFile, FileMode.Open, FileAccess.Read)) {
-                return new HSSFWorkbook(file);
+        private static IWorkbook InitializeWorkbook(string excelFile) {
+
+            if (Path.GetExtension(excelFile).Equals(".xls"))
+            {
+                using (var file = new FileStream(excelFile, FileMode.Open, FileAccess.Read))
+                {
+                    return new HSSFWorkbook(file);
+                }
             }
+            else if (Path.GetExtension(excelFile).Equals(".xlsx"))
+            {
+                using (var file = new FileStream(excelFile, FileMode.Open, FileAccess.Read))
+                {
+                    return new XSSFWorkbook(file);
+                }
+            }
+            else return null;
         }
     }
 }
