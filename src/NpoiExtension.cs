@@ -84,7 +84,7 @@ namespace NPOI.Extension {
                             index = column.Index;
                     }
 
-                    var value = property.GetValue(item);
+                    var value = property.GetValue(item, null);
                     var cell = row.CreateCell(index);
                     if (value is ValueType) {
                         if (property.PropertyType == typeof(bool)) {
