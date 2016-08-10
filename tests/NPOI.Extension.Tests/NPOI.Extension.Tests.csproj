@@ -70,11 +70,27 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Case 1\Model.cs" />
+    <Compile Include="Case 2\HazmatStorageLocationArea.cs" />
+    <Compile Include="Case 2\HazWasteStorageLocationArea.cs" />
+    <Compile Include="Case 2\IStorageLocation.cs" />
+    <Compile Include="Case 2\IStorageLocationArea.cs" />
     <Compile Include="UnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Case 1\Book - Testcase 1.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Case 2\Bavaria_HazmatStorageLocation_A.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Case 2\Bavaria_HazWasteStorageLocation_A.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Case 2\Wiesbaden_HazmatStorageLocation_A.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Case 2\Wiesbaden_HazWasteStorageLocation_A.xls">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
