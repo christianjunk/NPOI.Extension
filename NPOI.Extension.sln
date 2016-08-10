@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8016EBDF-3080-41D2-8864-756493FAE3D8}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPOI.Extension", "src\NPOI.Extension.csproj", "{5ADDD29D-B3AF-4966-B730-5E5192D0E9DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPOI.Extension.Example", "samples\NPOI.Extension.Example.csproj", "{08DCA8C6-8AB5-4341-AB82-001EC59B9ACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPOI.Extension.Tests", "tests\NPOI.Extension.Tests\NPOI.Extension.Tests.csproj", "{9810725B-2A41-46A6-BCBC-3E4833D70CDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F387F5EB-5637-4B50-8DD4-76012EBCD95F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{08DCA8C6-8AB5-4341-AB82-001EC59B9ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08DCA8C6-8AB5-4341-AB82-001EC59B9ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08DCA8C6-8AB5-4341-AB82-001EC59B9ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9810725B-2A41-46A6-BCBC-3E4833D70CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9810725B-2A41-46A6-BCBC-3E4833D70CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9810725B-2A41-46A6-BCBC-3E4833D70CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9810725B-2A41-46A6-BCBC-3E4833D70CDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +40,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{5ADDD29D-B3AF-4966-B730-5E5192D0E9DF} = {8016EBDF-3080-41D2-8864-756493FAE3D8}
 		{08DCA8C6-8AB5-4341-AB82-001EC59B9ACC} = {E05FA5CC-E386-42EB-BFD3-A72FE5E8F00F}
+		{9810725B-2A41-46A6-BCBC-3E4833D70CDF} = {F387F5EB-5637-4B50-8DD4-76012EBCD95F}
 	EndGlobalSection
 EndGlobal
